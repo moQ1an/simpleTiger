@@ -100,3 +100,26 @@ input{
     height: 108px;
     border-radius: 19px;
 }
+.footer{
+    width: 100%;
+    display: flex;
+justify-content: center;
+    /*background: #f5e871;*/
+}
+.footer_tips{
+color: white;
+    border-radius: 10px;
+    width: 80%;
+}
+.bed1{
+    width: 100%;
+    display: flex;
+    justify-self: center;
+    background: darkgreen;
+}
+.record{
+    color: white;
+}
+.inTip{
+    color: deepskyblue;
+}
