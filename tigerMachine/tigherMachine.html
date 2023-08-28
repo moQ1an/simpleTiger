@@ -5,10 +5,114 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>只因牌老虎机</title>
     <link rel="stylesheet" href="tigerMachine.css">
 </head>
 <body>
+<div class="head">
+    <span class="head_text">魔Shing老虎只因</span>
+</div>
+<div class="nav">
+    <span class="tg O"><input type="text" name=""><img src="" alt="" class="tgi"></span>
+    <span class="tg T"><input type="text" name=""><img src="" alt="" class="tgt"></span>
+    <span class="tg Th"><input type="text" name=""><img src="" alt="" class="tgw"></span>
+</div>
+<div class="Start">
+    <button class="ClickToStart">
+        <img class="manipulate" alt="点击摇奖" src="./img/抽奖ICON.png">
+    </button>
+</div>
+<div class="bed">
+    <div class="tips">点击摇奖</div>
+</div>
 
+<div class="footer">
+    <div class="footer_tips">
+        <p>最后再加</p>
+    </div>
+</div>
+
+<script>
+    <!--    奖池内容-->
+    const black = [
+        {url: "./img/C宝物.png", name: "C宝物", alt: "黑"},
+        {url: "./img/小白骨头.png", name: "小白骨头", alt: "黑"},
+        {url: "./img/再接再奖励.png", name: "空气", alt: "黑"}
+    ]
+    const white = [
+        {url: "./img/经验.png", name: "经验", alt: "白"},
+        {url: "./img/忍博弈.png", name: "忍币", alt: "白"},
+        {url: "./img/疯雯识.png", name: "风石头", alt: "白"},
+        {url: "./img/银耀世.png", name: "银钥匙", alt: "白"}
+    ]
+    const blue = [
+        {url: "./img/B宝物.png", name: "B宝物", alt: "蓝"},
+        {url: "./img/自选雯识.png", name: "自选石头", alt: "蓝"}
+    ]
+    const purple = [
+        {url: "./img/A玄伤令.png", name: "A悬赏令", alt: "紫"},
+        {url: "./img/S+玄伤令.png", name: "S+悬赏令", alt: "紫"},
+        {url: "./img/S玄伤令.png", name: "S悬赏令", alt: "紫"},
+        {url: "./img/狗三肥斩碎片.png", name: "狗三绯斩碎片", alt: "紫"},
+        {url: "./img/狗三喂梨碎片.png", name: "狗三卫鲤碎片", alt: "紫"},
+        {url: "./img/金耀石.png", name: "金钥匙", alt: "紫"},
+        {url: "./img/解身福.png", name: "结神符", alt: "紫"},
+        {url: "./img/撅醒石.png", name: "觉醒石", alt: "紫"}
+    ]
+    const gold = [
+        {url: "./img/SS图卷.png", name: "SS图卷", alt: "金"},
+        {url: "./img/SS憨病卷轴.png", name: "SS寒冰卷轴", alt: "金"},
+        {url: "./img/SS沫隋.png", name: "SS墨髓", alt: "金"},
+        {url: "./img/SS疯之届.png", name: "SS风戒指", alt: "金"},
+        {url: "./img/SS鬼戒.png", name: "SS鬼戒", alt: "金"}
+    ]
+    // 获取图片塞入图片
+    const tgi = document.querySelector(".tgi")
+    const tgt = document.querySelector(".tgt");
+    const tgw = document.querySelector(".tgw");
+
+
+    // 定义规则
+    /*
+    * 金 1%  103
+    * 紫 5%  1~5
+    * 蓝 8%  6~14
+    * 白 20% 15~35
+    * 黑 66% 36~102*/
+    // 设置函数
+
+
+    // 获取点击摇奖按钮
+    const startClick = document.querySelector(".ClickToStart");
+    const manipulate = document.querySelector('.manipulate')
+    startClick.addEventListener('mousedown', () => {
+        manipulate.style.rotate = '-7deg'
+        manipulate.style.transform = 'translateX(-10px)'
+    })
+    startClick.addEventListener('mouseup', () => {
+        manipulate.style.rotate = '0deg'
+        manipulate.style.transform = 'translateX(0)'
+    })
+
+    let blackR = Math.floor(Math.random() * black.length + 1);
+    let whiteR = Math.floor(Math.random() * white.length + 1);
+    let blueR = Math.floor(Math.random() * blue.length + 1);
+    let purpleR = Math.floor(Math.random() * purple.length + 1);
+    let goldR = Math.floor(Math.random() * gold.length + 1);
+    startClick.addEventListener('click', () => {
+            // 设置随机数  1~102  每点击一次，生成一个random
+            let numRandom1 = Math.floor(Math.random() * 103) + 1
+            let numRandom2 = Math.floor(Math.random() * 103) + 1
+            let numRandom3 = Math.floor(Math.random() * 103) + 1
+        if(1<=numRandom1<=5){
+            console.log(numRandom1)
+        }
+
+
+
+        }
+    )
+
+</script>
 </body>
 </html>

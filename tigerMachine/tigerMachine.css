@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background:black;
+}
+.head{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+.head_text{
+    position: relative;
+    top: 9px;
+    background: url("./img/View.jpg") 2px 5px;
+    background-clip: text;
+    background-size: cover;
+    font-weight: 900;
+    color: transparent;
+    font-size: 29px;
+    font-family: 华文楷体,serif;
+    -webkit-background-clip: text; //兼容
+}
+
+.nav{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.tg{
+    position: relative;
+    width: 109px;
+    height: 109px;
+    background: url("./img/问号.png");
+    background-size: cover;
+    margin-left: 20px;
+    outline: none;
+    border: none;
+    border-radius: 14px;
+    box-shadow: 3px 3px 10px  white,inset 0 -10px 10px #f6e2e2,inset 0 10px 10px #ffe8e8
+}
+input{
+    position: relative;
+    width: 109px;
+    height: 109px;
+    display: none;
+}
+.Start{
+    position: relative;
+    margin-top: 80px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+}
+.ClickToStart{
+    position: relative;
+    width: 100px;
+    height: 60px;
+    border-radius: 19px;
+    overflow: hidden;
+    outline:none;
+    border: none;
+    box-shadow: 0 3px  1px #f5e871,0 0 100px 20px #fcfce6;
+    cursor: pointer;
+}
+/*摇奖图片*/
+.manipulate{
+    position: relative;
+    width: 100px;
+    height: 60px;
+    top: 12px;
+}
+.bed{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.bed .tips{
+    position: relative;
+    color: transparent;
+    font-weight: 900;
+    font-size: 22px;
+    font-family: 华文楷体,serif;
+    background: url("./img/gift.png") ;
+    background-size: cover;
+    -webkit-background-clip: text;
+}
+.tgi,.tgt,.tgw{
+    width: 108px;
+    height: 108px;
+    border-radius: 19px;
+}
