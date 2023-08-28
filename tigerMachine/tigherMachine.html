@@ -104,127 +104,170 @@
             let numRandom1 = Math.floor(Math.random() * 103) + 1
             let numRandom2 = Math.floor(Math.random() * 103) + 1
             let numRandom3 = Math.floor(Math.random() * 103) + 1
-        // 每个对应颜色品级数组中的随机下标
-        let blackR1 = Math.floor(Math.random() * black.length);
-        let blackR2 = Math.floor(Math.random() * black.length);
-        let blackR3 = Math.floor(Math.random() * black.length);
-        let whiteR1 = Math.floor(Math.random() * white.length);
-        let whiteR2 = Math.floor(Math.random() * white.length);
-        let whiteR3= Math.floor(Math.random() * white.length);
-        let blueR1 = Math.floor(Math.random() * blue.length);
-        let blueR2 = Math.floor(Math.random() * blue.length);
-        let blueR3 = Math.floor(Math.random() * blue.length);
-        let purpleR1 = Math.floor(Math.random() * purple.length);
-        let purpleR2 = Math.floor(Math.random() * purple.length);
-        let purpleR3 = Math.floor(Math.random() * purple.length);
-        let goldR1 = Math.floor(Math.random() * gold.length);
-        let goldR2 = Math.floor(Math.random() * gold.length);
-        let goldR3 = Math.floor(Math.random() * gold.length);
-        console.log('num1:' + numRandom1)
-        console.log('num2:' + numRandom2)
-        console.log('num3:' + numRandom3)
-        console.log('blR1:' + blackR1)
-        console.log('blR2:' + blackR2)
-        console.log('blR3:' + blackR3)
-        console.log('whiR1:' + whiteR1)
-        console.log('whiR2:' + whiteR2)
-        console.log('whiR3:' + whiteR3)
-        console.log('blueR1:' + blueR1)
-        console.log('blueR2:' + blueR2)
-        console.log('blueR3:' + blueR3)
-        console.log('purR1:' + purpleR1)
-        console.log('purR2:' + purpleR2)
-        console.log('purR3:' + purpleR3)
-        console.log('goldR1:' + goldR1)
-        console.log('goldR2:' + goldR2)
-        console.log('goldR3:' + goldR3)
+            // 每个对应颜色品级数组中的随机下标
+            let blackR1 = Math.floor(Math.random() * black.length);
+            let blackR2 = Math.floor(Math.random() * black.length);
+            let blackR3 = Math.floor(Math.random() * black.length);
+            let whiteR1 = Math.floor(Math.random() * white.length);
+            let whiteR2 = Math.floor(Math.random() * white.length);
+            let whiteR3 = Math.floor(Math.random() * white.length);
+            let blueR1 = Math.floor(Math.random() * blue.length);
+            let blueR2 = Math.floor(Math.random() * blue.length);
+            let blueR3 = Math.floor(Math.random() * blue.length);
+            let purpleR1 = Math.floor(Math.random() * purple.length);
+            let purpleR2 = Math.floor(Math.random() * purple.length);
+            let purpleR3 = Math.floor(Math.random() * purple.length);
+            let goldR1 = Math.floor(Math.random() * gold.length);
+            let goldR2 = Math.floor(Math.random() * gold.length);
+            let goldR3 = Math.floor(Math.random() * gold.length);
+            console.log('num1:' + numRandom1)
+            console.log('num2:' + numRandom2)
+            console.log('num3:' + numRandom3)
+            console.log('blR1:' + blackR1)
+            console.log('blR2:' + blackR2)
+            console.log('blR3:' + blackR3)
+            console.log('whiR1:' + whiteR1)
+            console.log('whiR2:' + whiteR2)
+            console.log('whiR3:' + whiteR3)
+            console.log('blueR1:' + blueR1)
+            console.log('blueR2:' + blueR2)
+            console.log('blueR3:' + blueR3)
+            console.log('purR1:' + purpleR1)
+            console.log('purR2:' + purpleR2)
+            console.log('purR3:' + purpleR3)
+            console.log('goldR1:' + goldR1)
+            console.log('goldR2:' + goldR2)
+            console.log('goldR3:' + goldR3)
             // ran1窗口
             if (36 <= numRandom1 && numRandom1 <= 102) {
                 tgi.src = black[blackR1].url
                 tgi.alt = black[blackR1].alt
                 tgi.name = black[blackR1].name
-            }
+                tgi.style.transform = 'translateY(50px)'
+                tgi.style.display = 'block'
+                tgi.style.boxShadow='2px 0 20px 8px black,inset 2px -2px 20px black'
+                tgi.style.opacity = '1'}
             if (15 <= numRandom1 && numRandom1 <= 35) {
                 tgi.src = white[whiteR1].url
                 tgi.alt = white[whiteR1].alt
                 tgi.name = white[whiteR1].name
-            }
+                tgi.style.transform = 'translateY(50px)'
+                tgi.style.display = 'block'
+                tgi.style.boxShadow='2px 0 20px 8px white'
+                tgi.style.opacity = '1'}
             if (14 <= numRandom1 && numRandom1 <= 6) {
                 tgi.src = blue[blueR1].url
                 tgi.alt = blue[blueR1].alt
                 tgi.name = blue[blueR1].name
-            }
+                tgi.style.transform = 'translateY(50px)'
+                tgi.style.display = 'block'
+                tgi.style.boxShadow='2px 0 20px 8px blue'
+                tgi.style.opacity = '1'}
             if (1 <= numRandom1 && numRandom1 <= 5) {
                 tgi.src = purple[purpleR1].url
                 tgi.alt = purple[purpleR1].alt
                 tgi.name = purple[purpleR1].name
-            }
+                tgi.style.transform = 'translateY(50px)'
+                tgi.style.boxShadow='2px 0 20px 8px purple'
+                tgi.style.display = 'block'
+                tgi.style.opacity = '1'}
             if (numRandom1 === 103) {
                 tgi.src = gold[goldR1].url
                 tgi.alt = gold[goldR1].alt
                 tgi.name = gold[goldR1].name
-            }
+                tgi.style.transform = 'translateY(50px)'
+                tgi.style.display = 'block'
+                tgi.style.opacity = '1'
+            tgi.style.boxShadow='2px 0 200px 30px yellow'}
             //ran2窗口
             if (36 <= numRandom2 && numRandom2 <= 102) {
                 tgt.src = black[blackR2].url
                 tgt.alt = black[blackR2].alt
                 tgt.name = black[blackR2].name
-            }
+                tgt.style.transform = 'translateY(50px)'
+                tgt.style.boxShadow='2px 0 20px 8px black,inset 2px -2px 20px black'
+                tgt.style.display = 'block'
+                tgt.style.opacity = '1'}
             if (15 <= numRandom2 && numRandom2 <= 35) {
                 tgt.src = white[whiteR2].url
                 tgt.alt = white[whiteR2].alt
                 tgt.name = white[whiteR2].name
-            }
+                tgt.style.transform = 'translateY(50px)'
+                tgt.style.display = 'block'
+                tgt.style.boxShadow='2px 0 20px 8px white'
+                tgt.style.opacity = '1'}
             if (14 <= numRandom2 && numRandom2 <= 6) {
                 tgt.src = blue[blueR2].url
                 tgt.alt = blue[blueR2].alt
                 tgt.name = blue[blueR2].name
-            }
+                tgt.style.transform = 'translateY(50px)'
+                tgt.style.boxShadow='2px 0 20px 8px blue'
+                tgt.style.display = 'block'
+                tgt.style.opacity = '1'}
             if (1 <= numRandom2 && numRandom2 <= 5) {
                 tgt.src = purple[purpleR2].url
                 tgt.alt = purple[purpleR2].alt
                 tgt.name = purple[purpleR2].name
-            }
-            if (numRandom2 === 103) {
+                tgt.style.transform = 'translateY(50px)'
+                tgt.style.display = 'block'
+                tgt.style.boxShadow='2px 0 20px 8px purple'
+                tgt.style.opacity = '1'}
+            if (numRandom2 ===103) {
                 tgt.src = gold[goldR2].url
                 tgt.alt = gold[goldR2].alt
                 tgt.name = gold[goldR2].name
-            }
+                tgt.style.transform = 'translateY(50px)'
+                tgt.style.display = 'block'
+                tgt.style.opacity = '1'
+                tgt.style.boxShadow='2px 0 200px 80px yellow'}
             //     ran3窗口
             if (36 <= numRandom3 && numRandom3 <= 102) {
                 tgw.src = black[blackR3].url
                 tgw.alt = black[blackR3].alt
-                tgw.name= black[blackR3].name
-            }
+                tgw.name = black[blackR3].name
+                tgw.style.transform = 'translateY(50px)'
+                tgw.style.display = 'block'
+                tgw.style.boxShadow='2px 0 20px 8px black,inset 2px -2px 20px black'
+                tgw.style.opacity = '1'}
             if (15 <= numRandom3 && numRandom3 <= 35) {
                 tgw.src = white[whiteR3].url
                 tgw.alt = white[whiteR3].alt
                 tgw.name = white[whiteR3].name
-            }
+                tgw.style.transform = 'translateY(50px)'
+                tgw.style.boxShadow='2px 0 20px 8px white'
+                tgw.style.display = 'block'
+                tgw.style.opacity = '1'}
             if (14 <= numRandom3 && numRandom3 <= 6) {
                 tgw.src = blue[blueR3].url
                 tgw.alt = blue[blueR3].alt
                 tgw.name = blue[blueR3].name
-            }
+                tgw.style.transform = 'translateY(50px)'
+                tgw.style.display = 'block'
+                tgw.style.opacity = '1'}
             if (1 <= numRandom3 && numRandom3 <= 5) {
                 tgw.src = purple[purpleR3].url
                 tgw.alt = purple[purpleR3].alt
                 tgw.name = purple[purpleR3].name
-            }
+                tgw.style.transform = 'translateY(50px)'
+                tgw.style.display = 'block'
+                tgw.style.boxShadow='2px 0 20px 8px purple'
+                tgw.style.opacity = '1'}
             if (numRandom3 === 103) {
                 tgw.src = gold[goldR3].url
                 tgw.alt = gold[goldR3].alt
                 tgw.name = gold[goldR3].name
+                tgw.style.transform = 'translateY(50px)'
+                tgw.style.opacity = '1'
+                tgw.style.boxShadow='2px 0 200px 80px yellow'
             }
-        const record = document.querySelector('.record')
-        record.innerHTML=`
+            const record = document.querySelector('.record')
+            record.innerHTML = `
     <p class="inTip">当前奖品内容:</p><br>
     ${tgi.alt}色:${tgi.name}<br>
     ${tgt.alt}色:${tgt.name}<br>
     ${tgw.alt}色:${tgw.name}<br>
     `
         }
-
     )
 
 </script>
