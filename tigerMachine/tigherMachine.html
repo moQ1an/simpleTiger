@@ -100,13 +100,24 @@
     let purpleR = Math.floor(Math.random() * purple.length + 1);
     let goldR = Math.floor(Math.random() * gold.length + 1);
     startClick.addEventListener('click', () => {
+        let t=2;
+        setInterval(()=>{
+            t--
             // 设置随机数  1~102  每点击一次，生成一个random
             let numRandom1 = Math.floor(Math.random() * 103) + 1
             let numRandom2 = Math.floor(Math.random() * 103) + 1
             let numRandom3 = Math.floor(Math.random() * 103) + 1
-        if(1<=numRandom1<=5){
-            console.log(numRandom1)
-        }
+            if(1<=numRandom1&&numRandom1<=5){
+                tgi.src=black[blackR].url
+                tgi.alt=black[blackR].alt
+            }
+            if (numRandom1>=6&&numRandom1<=14){
+                tgi.src=white[whiteR].url
+                tgi.alt=white[whiteR].alt
+            }
+            clearInterval(t)
+        },1000)
+
 
 
 
