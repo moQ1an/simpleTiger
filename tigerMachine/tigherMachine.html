@@ -94,33 +94,88 @@
         manipulate.style.transform = 'translateX(0)'
     })
 
-    let blackR = Math.floor(Math.random() * black.length + 1);
-    let whiteR = Math.floor(Math.random() * white.length + 1);
-    let blueR = Math.floor(Math.random() * blue.length + 1);
-    let purpleR = Math.floor(Math.random() * purple.length + 1);
-    let goldR = Math.floor(Math.random() * gold.length + 1);
+
     startClick.addEventListener('click', () => {
-        let t=2;
-        setInterval(()=>{
-            t--
+
             // 设置随机数  1~102  每点击一次，生成一个random
             let numRandom1 = Math.floor(Math.random() * 103) + 1
             let numRandom2 = Math.floor(Math.random() * 103) + 1
             let numRandom3 = Math.floor(Math.random() * 103) + 1
-            if(1<=numRandom1&&numRandom1<=5){
-                tgi.src=black[blackR].url
-                tgi.alt=black[blackR].alt
+        // 每个对应颜色品级数组中的随机下标
+        let blackR = Math.floor(Math.random() * black.length);
+        let whiteR = Math.floor(Math.random() * white.length);
+        let blueR = Math.floor(Math.random() * blue.length);
+        let purpleR = Math.floor(Math.random() * purple.length);
+        let goldR = Math.floor(Math.random() * gold.length);
+        // console.log('num:' + numRandom1)
+        // console.log('blR:' + blackR)
+        // console.log('whiR:' + whiteR)
+        // console.log('blueR:' + blueR)
+        // console.log('purR:' + purpleR)
+        // console.log('goldR:' + goldR)
+            // ran1窗口
+            if (36 <= numRandom1 && numRandom1 <= 102) {
+                tgi.src = black[blackR].url
+                tgi.alt = black[blackR].alt
             }
-            if (numRandom1>=6&&numRandom1<=14){
-                tgi.src=white[whiteR].url
-                tgi.alt=white[whiteR].alt
+            if (15 <= numRandom1 && numRandom1 <= 35) {
+                tgi.src = white[whiteR].url
+                tgi.alt = white[whiteR].alt
             }
-            clearInterval(t)
-        },1000)
-
-
-
-
+            if (14 <= numRandom1 && numRandom1 <= 6) {
+                tgi.src = blue[blueR].url
+                tgi.alt = blue[blueR].alt
+            }
+            if (1 <= numRandom1 && numRandom1 <= 5) {
+                tgi.src = purple[purpleR].url
+                tgi.alt = purple[purpleR].alt
+            }
+            if (numRandom1 === 103) {
+                tgi.src = gold[goldR].url
+                tgi.alt = gold[goldR].alt
+            }
+            //ran2窗口
+            if (36 <= numRandom2 && numRandom2 <= 102) {
+                tgt.src = black[blackR].url
+                tgt.alt = black[blackR].alt
+            }
+            if (15 <= numRandom2 && numRandom2 <= 35) {
+                tgt.src = white[whiteR].url
+                tgt.alt = white[whiteR].alt
+            }
+            if (14 <= numRandom2 && numRandom2 <= 6) {
+                tgt.src = blue[blueR].url
+                tgt.alt = blue[blueR].alt
+            }
+            if (1 <= numRandom2 && numRandom2 <= 5) {
+                tgt.src = purple[purpleR].url
+                tgt.alt = purple[purpleR].alt
+            }
+            if (numRandom2 === 103) {
+                tgt.src = gold[goldR].url
+                tgt.alt = gold[goldR].alt
+            }
+            //     ran3窗口
+            if (36 <= numRandom3 && numRandom3 <= 102) {
+                tgw.src = black[blackR].url
+                tgw.alt = black[blackR].alt
+            }
+            if (15 <= numRandom3 && numRandom3 <= 35) {
+                tgw.src = white[whiteR].url
+                tgw.alt = white[whiteR].alt
+            }
+            if (14 <= numRandom3 && numRandom3 <= 6) {
+                tgw.src = blue[blueR].url
+                tgw.alt = blue[blueR].alt
+            }
+            if (1 <= numRandom3 && numRandom3 <= 5) {
+                tgw.src = purple[purpleR].url
+                tgw.alt = purple[purpleR].alt
+            }
+            if (numRandom3 === 103) {
+                tgw.src = gold[goldR].url
+                tgw.alt = gold[goldR].alt
+            }
         }
     )
 
