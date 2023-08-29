@@ -5,7 +5,6 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- 解决图片标签中src内容缺失的问题-->
     <meta name="referrer" content="no-referrer">
     <title>只因牌老虎机</title>
     <link rel="stylesheet" href="tigerMachine.css">
@@ -177,15 +176,7 @@
             console.log('goldR1:' + goldR1)
             console.log('goldR2:' + goldR2)
             console.log('goldR3:' + goldR3)
-        if (GoldArri.length === 9) {
-            numRandom1 = 103
-        }
-        if (GoldArrt.length === 9) {
-            numRandom2 = 103
-        }
-        if (GoldArrw.length === 9) {
-            numRandom3 = 103
-        }
+
             // 保底机制
             GoldArri.push(`已经${10 - GoldArri.length - 1}次没有出金`)
             console.log(GoldArri)
@@ -193,7 +184,19 @@
             console.log(GoldArri)
             GoldArrw.push(`已经${10 - GoldArrw.length - 1}次没有出金`)
             console.log(GoldArri)
-
+            // 第十次 立马出金
+            if (GoldArri.length === 10) {
+                numRandom1 = 103
+                GoldArri=[]
+            }
+            if (GoldArrt.length === 10) {
+                numRandom2 = 103
+                GoldArri=[]
+            }
+            if (GoldArrw.length === 10) {
+                numRandom3 = 103
+                GoldArri=[]
+            }
             // ran1窗口
             if (36 <= numRandom1 && numRandom1 <= 102) {
                 tgi.src = black[blackR1].url
@@ -235,8 +238,8 @@
                 tgi.alt = gold[goldR1].alt
                 tgi.name = gold[goldR1].name
                 //如果出金，则清空幸运值
-                GoldArri.length=0
                 indexI = (10 - GoldArri.length - 1)
+                GoldArri=[]
                 tgi.style.display = 'block'
                 tgi.style.opacity = '1'
                 tgi.style.boxShadow = '2px 0 200px 30px yellow'
@@ -283,8 +286,9 @@
                 tgt.alt = gold[goldR2].alt
                 tgt.name = gold[goldR2].name
                 //如果出金，则清空幸运值
-                GoldArrt.length=0
-                indexT = (10 - GoldArrt.length-1)
+
+                indexT = (10 - GoldArrt.length - 1)
+                GoldArrt=[]
                 tgt.style.display = 'block'
                 tgt.style.opacity = '1'
                 tgt.style.boxShadow = '0 0 200px 80px yellow'
@@ -331,14 +335,18 @@
                 tgw.name = gold[goldR3].name
                 tgw.style.opacity = '1'
                 //如果出金，则清空幸运值
-                GoldArrw.length=0
+
                 indexW = (10 - GoldArrw.length - 1)
+                GoldArrw=[]
                 tgw.style.boxShadow = '2px 0 200px 80px yellow'
             }
+            GoldArri.length;
+            GoldArrt.length;
+            GoldArrw.length;
             const record = document.querySelector('.record')
             record.innerHTML = `
     <p class="inTip">当前奖品内容:</p><br>
-    距离下次出金:${10 - GoldArri.length}次,${10 - GoldArrt.length}次,${10-GoldArrw.length}次<br>
+    距离下次出金:${10 - GoldArri.length}次,${10 - GoldArrt.length}次,${10 - GoldArrw.length}次<br>
     ${tgi.alt}色:<span class="rc">${tgi.name}</span><br>
     ${tgt.alt}色:<span class="rc">${tgt.name}</span><br>
     ${tgw.alt}色:<span class="rc">${tgw.name}</span><br>
