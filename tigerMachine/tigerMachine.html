@@ -36,6 +36,7 @@
 </div>
 
 <script>
+
     <!--    奖池内容-->
     const black = [
         {url: "./img/C宝物.png", name: "C宝物", alt: "黑"},
@@ -86,8 +87,10 @@
     const tgi = document.querySelector(".tgi")
     const tgt = document.querySelector(".tgt");
     const tgw = document.querySelector(".tgw");
-
-
+    // 新增保底次数
+    let GoldArri = []
+    let GoldArrt = []
+    let GoldArrw = []
     // 定义规则
     /*
     * 金 1%  103
@@ -109,22 +112,27 @@
         manipulate.style.rotate = '0deg'
         manipulate.style.transform = 'translateX(0)'
     })
-
+    let indexI
+    let indexT
+    let indexW
     // function Start(){
     startClick.addEventListener('click', () => {
+        indexI++;
+        indexT++
+        indexW++
             // 添加动画
-          tgi.classList.add('scale')
-          tgt.classList.add('scale')
-          tgw.classList.add('scale')
-        tgi.addEventListener('animationend',()=>{
-            tgi.classList.remove('scale')
-        })
-        tgt.addEventListener('animationend',()=>{
-            tgt.classList.remove('scale')
-        })
-        tgw.addEventListener('animationend',()=>{
-            tgw.classList.remove('scale')
-        })
+            tgi.classList.add('scale')
+            tgt.classList.add('scale')
+            tgw.classList.add('scale')
+            tgi.addEventListener('animationend', () => {
+                tgi.classList.remove('scale')
+            })
+            tgt.addEventListener('animationend', () => {
+                tgt.classList.remove('scale')
+            })
+            tgw.addEventListener('animationend', () => {
+                tgw.classList.remove('scale')
+            })
 
 
             // 设置随机数  1~102  每点击一次，生成一个random
@@ -150,21 +158,35 @@
             console.log('num1:' + numRandom1)
             console.log('num2:' + numRandom2)
             console.log('num3:' + numRandom3)
-            console.log('blR1:' + blackR1)
-            console.log('blR2:' + blackR2)
-            console.log('blR3:' + blackR3)
-            console.log('whiR1:' + whiteR1)
-            console.log('whiR2:' + whiteR2)
-            console.log('whiR3:' + whiteR3)
-            console.log('blueR1:' + blueR1)
-            console.log('blueR2:' + blueR2)
-            console.log('blueR3:' + blueR3)
-            console.log('purR1:' + purpleR1)
-            console.log('purR2:' + purpleR2)
-            console.log('purR3:' + purpleR3)
-            console.log('goldR1:' + goldR1)
-            console.log('goldR2:' + goldR2)
-            console.log('goldR3:' + goldR3)
+            // console.log('blR1:' + blackR1)
+            // console.log('blR2:' + blackR2)
+            // console.log('blR3:' + blackR3)
+            // console.log('whiR1:' + whiteR1)
+            // console.log('whiR2:' + whiteR2)
+            // console.log('whiR3:' + whiteR3)
+            // console.log('blueR1:' + blueR1)
+            // console.log('blueR2:' + blueR2)
+            // console.log('blueR3:' + blueR3)
+            // console.log('purR1:' + purpleR1)
+            // console.log('purR2:' + purpleR2)
+            // console.log('purR3:' + purpleR3)
+            // console.log('goldR1:' + goldR1)
+            // console.log('goldR2:' + goldR2)
+            // console.log('goldR3:' + goldR3)
+
+
+            GoldArri.push(`已经${indexI}次没有出金`)
+            GoldArrt.push(`已经${indexT}次没有出金`)
+            GoldArrw.push(`已经${indexW}次没有出金`)
+        if (GoldArri.length===10){
+            numRandom1=103
+        }
+        if (GoldArrt.length===10){
+            numRandom2=103
+        }
+        if (GoldArrw.length===10){
+            numRandom3=103
+        }
             // ran1窗口
             if (36 <= numRandom1 && numRandom1 <= 102) {
                 tgi.src = black[blackR1].url
@@ -205,7 +227,9 @@
                 tgi.src = gold[goldR1].url
                 tgi.alt = gold[goldR1].alt
                 tgi.name = gold[goldR1].name
-
+                //如果出金，则清空幸运值
+                GoldArri.length = 0
+                indexI=0
                 tgi.style.display = 'block'
                 tgi.style.opacity = '1'
                 tgi.style.boxShadow = '2px 0 200px 30px yellow'
@@ -251,7 +275,9 @@
                 tgt.src = gold[goldR2].url
                 tgt.alt = gold[goldR2].alt
                 tgt.name = gold[goldR2].name
-
+                //如果出金，则清空幸运值
+                GoldArrt.length = 0
+                indexT=0
                 tgt.style.display = 'block'
                 tgt.style.opacity = '1'
                 tgt.style.boxShadow = '0 0 200px 80px yellow'
@@ -297,11 +323,15 @@
                 tgw.alt = gold[goldR3].alt
                 tgw.name = gold[goldR3].name
                 tgw.style.opacity = '1'
+                //如果出金，则清空幸运值
+                GoldArrw.length=0
+                indexW=0
                 tgw.style.boxShadow = '2px 0 200px 80px yellow'
             }
             const record = document.querySelector('.record')
             record.innerHTML = `
     <p class="inTip">当前奖品内容:</p><br>
+    距离下次出金:${10-GoldArri.length}次,${10-GoldArrt.length}次,${10-GoldArrw.length}次<br>
     ${tgi.alt}色:<span class="rc">${tgi.name}</span><br>
     ${tgt.alt}色:<span class="rc">${tgt.name}</span><br>
     ${tgw.alt}色:<span class="rc">${tgw.name}</span><br>
