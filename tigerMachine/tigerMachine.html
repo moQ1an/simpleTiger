@@ -5,6 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 解决图片标签中src内容缺失的问题-->
+    <meta name="referrer" content="no-referrer">
     <title>只因牌老虎机</title>
     <link rel="stylesheet" href="tigerMachine.css">
 </head>
@@ -13,9 +15,9 @@
     <span class="head_text">魔Shing老虎只因</span>
 </div>
 <div class="nav">
-    <span class="tg O"><input type="text" name=""><img src="" alt="" class="tgi"></span>
-    <span class="tg T"><input type="text" name=""><img src="" alt="" class="tgt"></span>
-    <span class="tg Th"><input type="text" name=""><img src="" alt="" class="tgw"></span>
+    <span class="tg O"><input type="text"><img src="" alt="" class="tgi"></span>
+    <span class="tg T"><input type="text"><img src="" alt="" class="tgt"></span>
+    <span class="tg Th"><input type="text"><img src="" alt="" class="tgw"></span>
 </div>
 <div class="Start">
     <button class="ClickToStart">
@@ -111,14 +113,17 @@
         manipulate.style.rotate = '0deg'
         manipulate.style.transform = 'translateX(0)'
     })
+    // 计数用
     let indexI
     let indexT
     let indexW
+    // 三个窗口的随机数。
+    let numRandom1
+    let numRandom2
+    let numRandom3
     // function Start(){
     startClick.addEventListener('click', () => {
-        indexI++;
-        indexT++
-        indexW++
+
             // 添加动画
             tgi.classList.add('scale')
             tgt.classList.add('scale')
@@ -135,9 +140,9 @@
 
 
             // 设置随机数  1~102  每点击一次，生成一个random
-            let numRandom1 = Math.floor(Math.random() * 103) + 1
-            let numRandom2 = Math.floor(Math.random() * 103) + 1
-            let numRandom3 = Math.floor(Math.random() * 103) + 1
+            numRandom1 = Math.floor(Math.random() * 103) + 1
+            numRandom2 = Math.floor(Math.random() * 103) + 1
+            numRandom3 = Math.floor(Math.random() * 103) + 1
             // 每个对应颜色品级数组中的随机下标
             let blackR1 = Math.floor(Math.random() * black.length);
             let blackR2 = Math.floor(Math.random() * black.length);
@@ -157,35 +162,38 @@
             console.log('num1:' + numRandom1)
             console.log('num2:' + numRandom2)
             console.log('num3:' + numRandom3)
-            // console.log('blR1:' + blackR1)
-            // console.log('blR2:' + blackR2)
-            // console.log('blR3:' + blackR3)
-            // console.log('whiR1:' + whiteR1)
-            // console.log('whiR2:' + whiteR2)
-            // console.log('whiR3:' + whiteR3)
-            // console.log('blueR1:' + blueR1)
-            // console.log('blueR2:' + blueR2)
-            // console.log('blueR3:' + blueR3)
-            // console.log('purR1:' + purpleR1)
-            // console.log('purR2:' + purpleR2)
-            // console.log('purR3:' + purpleR3)
-            // console.log('goldR1:' + goldR1)
-            // console.log('goldR2:' + goldR2)
-            // console.log('goldR3:' + goldR3)
-
+            console.log('blR1:' + blackR1)
+            console.log('blR2:' + blackR2)
+            console.log('blR3:' + blackR3)
+            console.log('whiR1:' + whiteR1)
+            console.log('whiR2:' + whiteR2)
+            console.log('whiR3:' + whiteR3)
+            console.log('blueR1:' + blueR1)
+            console.log('blueR2:' + blueR2)
+            console.log('blueR3:' + blueR3)
+            console.log('purR1:' + purpleR1)
+            console.log('purR2:' + purpleR2)
+            console.log('purR3:' + purpleR3)
+            console.log('goldR1:' + goldR1)
+            console.log('goldR2:' + goldR2)
+            console.log('goldR3:' + goldR3)
+        if (GoldArri.length === 10-1) {
+            numRandom1 = 103
+        }
+        if (GoldArrt.length === 10-1) {
+            numRandom2 = 103
+        }
+        if (GoldArrw.length === 10-1) {
+            numRandom3 = 103
+        }
             // 保底机制
-            GoldArri.push(`已经${indexI}次没有出金`)
-            GoldArrt.push(`已经${indexT}次没有出金`)
-            GoldArrw.push(`已经${indexW}次没有出金`)
-        if (GoldArri.length===10){
-            numRandom1=103
-        }
-        if (GoldArrt.length===10){
-            numRandom2=103
-        }
-        if (GoldArrw.length===10){
-            numRandom3=103
-        }
+            GoldArri.push(`已经${10 - GoldArri.length - 1}次没有出金`)
+            console.log(GoldArri)
+            GoldArrt.push(`已经${10 - GoldArrt.length - 1}次没有出金`)
+            console.log(GoldArri)
+            GoldArrw.push(`已经${10 - GoldArrw.length - 1}次没有出金`)
+            console.log(GoldArri)
+
             // ran1窗口
             if (36 <= numRandom1 && numRandom1 <= 102) {
                 tgi.src = black[blackR1].url
@@ -227,7 +235,8 @@
                 tgi.alt = gold[goldR1].alt
                 tgi.name = gold[goldR1].name
                 //如果出金，则清空幸运值
-                GoldArri.length = 0
+                GoldArri = []
+                indexI = (10 - GoldArri.length - 1)
                 tgi.style.display = 'block'
                 tgi.style.opacity = '1'
                 tgi.style.boxShadow = '2px 0 200px 30px yellow'
@@ -274,8 +283,8 @@
                 tgt.alt = gold[goldR2].alt
                 tgt.name = gold[goldR2].name
                 //如果出金，则清空幸运值
-                GoldArrt.length = 0
-
+                GoldArrt = []
+                indexT = (10 - GoldArrt.length - 1)
                 tgt.style.display = 'block'
                 tgt.style.opacity = '1'
                 tgt.style.boxShadow = '0 0 200px 80px yellow'
@@ -322,18 +331,21 @@
                 tgw.name = gold[goldR3].name
                 tgw.style.opacity = '1'
                 //如果出金，则清空幸运值
-                GoldArrw.length=0
+                GoldArrw = []
+                indexW = (10 - GoldArrw.length - 1)
                 tgw.style.boxShadow = '2px 0 200px 80px yellow'
             }
             const record = document.querySelector('.record')
             record.innerHTML = `
     <p class="inTip">当前奖品内容:</p><br>
-    距离下次出金:${10-GoldArri.length}次,${10-GoldArrt.length}次,${10-GoldArrw.length}次<br>
+    距离下次出金:${10 - GoldArri.length}次,${10 - GoldArrt.length}次,${10 - GoldArrw.length}次<br>
     ${tgi.alt}色:<span class="rc">${tgi.name}</span><br>
     ${tgt.alt}色:<span class="rc">${tgt.name}</span><br>
     ${tgw.alt}色:<span class="rc">${tgw.name}</span><br>
     `
-
+            indexI++;
+            indexT++
+            indexW++
         }
     )
     //     }
